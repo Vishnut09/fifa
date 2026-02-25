@@ -62,7 +62,7 @@ def load_data(file_path):
 
 # Assuming the zip file has been extracted in the Colab environment to 'extracted_dataset'
 # For deployment, you might need to adjust this path or include the CSV directly
-dataset_path = 'extracted_dataset/Data/players_20.csv'
+dataset_path = '/content/players_20 (1).csv'
 
 if not os.path.exists(dataset_path):
     st.error(f"Dataset not found at {dataset_path}. Please make sure 'PRCP-1004-Fifa20.zip' is extracted correctly.")
