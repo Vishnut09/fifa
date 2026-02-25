@@ -107,6 +107,9 @@ def perform_kmeans(X_scaled, k_clusters):
 labels_km, kmeans_model = perform_kmeans(X_scaled, k)
 df['cluster_kmeans'] = labels_km
 
+# Calculate cluster_profile outside specific page blocks
+cluster_profile = df.groupby('cluster_kmeans')[skills].mean().round(2)
+
 # --- Streamlit App Layout ---
 
 st.sidebar.header('Navigation')
@@ -114,7 +117,6 @@ page = st.sidebar.radio('Go to', ['Cluster Overview', 'Player Search', 'Cluster 
 
 if page == 'Cluster Overview':
     st.header('KMeans Cluster Characteristics')
-    cluster_profile = df.groupby('cluster_kmeans')[skills].mean().round(2)
     st.write("**Mean skill attributes for each KMeans cluster:**")
     st.dataframe(cluster_profile.T)
 
