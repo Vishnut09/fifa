@@ -68,7 +68,7 @@ if not os.path.exists(dataset_path):
     st.error(f"Dataset not found at {dataset_path}. Please make sure 'PRCP-1004-Fifa20.zip' is extracted correctly.")
     st.stop()
 
-df = load_data(dataset_path)
+df = load_data('/content/players_20 (1).csv')
 
 # --- 2. Clustering Preparation ---
 
